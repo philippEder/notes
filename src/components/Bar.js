@@ -4,36 +4,8 @@ import React from 'react';
 
 class Bar extends React.Component {
 
-    notes = this.props.notes
-
-
-    /*<div class="beatline"> </div>
-    <div  class="beat"> </div>
-    <div  class="beatline"> </div>
-    <div  class="beat">o</div>
-    <div  class="beatline"> </div>
-    <div  class="beat"> </div>
-    <div  class="beatline"> </div>
-    <div  class="beat"> </div>
-    <div  class="beatline"> </div>
-
-    
-                <img src={this.props.clef} className="clef"></img>
-
-
-                this.props.notes.map(note =>
-                        <div className='beat-parent'>
-                            <div className="beat-line">{this.isNoteEqual(Notes.f1, note) ? 'o' : ' '}</div>
-                            <div className="beat-noline">{this.isNoteEqual(Notes.e1, note) ? 'o' : ' '}</div>
-                            <div className="beat-line">{this.isNoteEqual(Notes.d, note) ? 'o' : ' '}</div>
-                            <div className="beat-noline">{this.isNoteEqual(Notes.c, note) ? 'o' : ' '}</div>
-                            <div className="beat-line">{this.isNoteEqual(Notes.b, note) ? 'o' : ' '}</div>
-                            <div className="beat-noline">{this.isNoteEqual(Notes.a, note) ? 'o' : ' '}</div>
-                            <div className="beat-line">{this.isNoteEqual(Notes.g, note) ? 'o' : ' '}</div>
-                            <div className="beat-noline">{this.isNoteEqual(Notes.f, note) ? 'o' : ' '}</div>
-                            <div className="beat-line">{this.isNoteEqual(Notes.e, note) ? 'o' : ' '}</div>
-                        </div>
-    
+    /*
+        <img src={this.props.clef} className="clef"></img>
     */
 
     noteBelongsHere(note1, note2) {
@@ -42,13 +14,13 @@ class Bar extends React.Component {
         return n1 == n2;
     }
 
-
     render() {
         return (
             <div id="bar" className="bar">
 
                 {
                     this.props.notes.map(note =>
+
                         <div className='beat-parent'>
                             <div className="beat-line">{this.noteBelongsHere(Notes.f1, note) ? <span className='note'>o</span>: <span></span>}</div>
                             <div className="beat-noline">{this.noteBelongsHere(Notes.e1, note) ? <span className='note'>o</span>: <span></span>}</div>
@@ -64,7 +36,6 @@ class Bar extends React.Component {
                     )
 
                 }
-
 
             </div>
         )
