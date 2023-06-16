@@ -1,0 +1,62 @@
+{
+    "title": "F-A-C-E",
+    "clef": "viola",
+    "bars": [
+        {
+            "beats": [
+                {
+                    "item": {
+                        "position": 1,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 3,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 5,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 7,
+                        "type": "quaterNote"
+                    }
+                }
+            ]
+        },
+        {
+            "beats": [
+                {
+                    "item": {
+                        "position": 7,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 5,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 3,
+                        "type": "quaterNote"
+                    }
+                },
+                {
+                    "item": {
+                        "position": 1,
+                        "type": "quaterNote"
+                    }
+                }
+            ]
+        }
+    ]
+}

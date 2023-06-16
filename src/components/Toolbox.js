@@ -1,7 +1,6 @@
 import { useDrag } from 'react-dnd';
 import { ToolboxItem } from '../common/TooboxItems';
-import quaterNote from '../icons/quater-note.svg';
-import halfNote from '../icons/half-note.svg';
+import quaterNote from '../icons/quater-note-up.svg';
 import './Toolbox.css';
 
 function Toolbox() {
@@ -17,8 +16,7 @@ function Toolbox() {
 
   return (
     <div id="toolbox" className='toolbox'>
-        <img src={quaterNote} ref={drag} id="quaterNote" style={{ opacity: isDragging ? 0.5 : 1}} className="toolboxItem"></img>
-        <img src={halfNote} ref={drag} id="halfNote" style={{ opacity: isDragging ? 0.5 : 1}} className="toolboxItem"></img>
+        <img src={quaterNote} ref={drag} id="quaterNote" style={{ opacity: isDragging ? 0.5 : 1}}></img>
     </div>
   );
 
