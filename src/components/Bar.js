@@ -1,6 +1,7 @@
 import Notes from '../common/Notes';
 import './Bar.css';
 import React from 'react';
+import { useDrag } from 'react-dnd';
 
 class Bar extends React.Component {
 

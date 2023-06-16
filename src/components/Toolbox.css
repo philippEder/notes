@@ -3,3 +3,13 @@
     width: 30px;
     height: 30px;
 }
+
+.toolbox {
+    position:fixed;
+    top: 100px;
+    left: 0;
+    width: 100px;
+    border-radius: 5px;
+    background-color: white;
+    -webkit-box-shadow: 1px 0px 7px #aba6a6;;
+}

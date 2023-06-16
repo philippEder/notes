@@ -7,9 +7,11 @@ function Page() {
 
 
   return (
+
     <div className="page">
         <Bar clef={clef} notes={[Notes.f, Notes.a, Notes.c, Notes.e1]}></Bar>
     </div>
+
   );
 
 
