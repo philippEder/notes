@@ -1,0 +1,50 @@
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.bar {
+    width: 70%;
+    line-height: 7px;
+}
+
+.note {
+    position: absolute;
+}
+
+.beat-parent {
+    display: inline-block;
+}
+
+.beat-line {
+    font-size: 30px;
+    line-height: 4px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    height: 10px;
+}
+
+.beat-noline {
+    font-size: 30px;
+    line-height: 4px;
+    text-align: center;
+    width: 100px;
+    height: 10px;
+}
+
+.clef {
+    position: absolute;
+    width: 100px;
+}
+
+.beat-line:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: black;
+  content: "";
+  width: 100%;
+  display: block;
+}
