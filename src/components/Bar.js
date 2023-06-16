@@ -1,4 +1,4 @@
-import { BarItem }  from '../common/BarItem';
+import { BarItem } from '../common/BarItem';
 import './Bar.css';
 import React from 'react';
 
@@ -11,16 +11,25 @@ class Bar extends React.Component {
 
     getContent(item) {
 
-        if (item.type === "quaterNote")
-            if(item.position < 3) {
-                return (<img src={BarItem.quaterNoteDown} className='note'></img>)
-            } else {
-                return (<img src={BarItem.quaterNoteDown} className='note'></img>)
-            }
-            
-
-        return <span className='note'>o</span>
+        console.log(item.type);
+        switch (item.type) {
+            case 'quaterNote':
+                console.log("hello");
+                return BarItem.quaterNoteDown;
+            case 'halfNote':
+                return BarItem.halfNoteDown;
+            default:
+                return <span className='note'>o</span>;
+        }
     }
+
+    /* if (item.type === "quaterNote")
+         if(item.position > 3) {
+             return (<img src={BarItem.quaterNoteDown} className='note'></img>)
+         } else {
+             return (<img src={BarItem.quaterNoteDown} className='note'></img>)
+     } */
+
 
 
     render() {
@@ -30,9 +39,7 @@ class Bar extends React.Component {
 
                 {
 
-                    this.props.data.beats.map((beat, idx) => (
-            
-                        
+                    this.props.data.beats.map(beat => (
 
                         <div className='beat-parent'>
                             <div className="beat-line">{this.isMine(8, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>

@@ -1,9 +1,15 @@
-import quaterNoteUpIcon from '../icons/quater-note-up.svg'
-import quaterNoteDownIcon from '../icons/quater-note-down.svg'
+import QuaterNoteUpIcon from '../icons/QuaterNoteUpIcon'
+import QuaterNoteDownIcon from '../icons/QuaterNoteDownIcon'
+import HalfNoteUp from '../icons/HalfNoteUpIcon.js'
+import HalfNoteDown  from '../icons/HalfNoteDownIcon.js'
 
 export const BarItem = {
-    quaterNoteUp: quaterNoteUpIcon,
-    quaterNoteDown: quaterNoteDownIcon
+
+    quaterNoteUp: <QuaterNoteUpIcon></QuaterNoteUpIcon>,
+    quaterNoteDown: <QuaterNoteDownIcon></QuaterNoteDownIcon>,
+    
+    halfNoteUp: <HalfNoteUp></HalfNoteUp>,
+    halfNoteDown: <HalfNoteDown></HalfNoteDown>
 }
 
 export default BarItem    

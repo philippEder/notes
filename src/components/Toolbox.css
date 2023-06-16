@@ -13,3 +13,7 @@
     background-color: white;
     -webkit-box-shadow: 1px 0px 7px #aba6a6;;
 }
+
+.toolbox svg {
+    margin: 10px;
+}
