@@ -4,54 +4,70 @@ import React from 'react';
 
 class Bar extends React.Component {
 
-    isMine(pos, beat) {
-        var itemPosition = beat.item.position
-        return pos == itemPosition;
-    }
-
-    getContent(item) {
-
-        console.log(item.type);
-        switch (item.type) {
-            case 'quaterNote':
-                console.log("hello");
-                return BarItem.quaterNoteDown;
-            case 'halfNote':
-                return BarItem.halfNoteDown;
-            default:
-                return <span className='note'>o</span>;
+    constructor(props) {
+        super(props);
+        this.state = {
+            bar: props.data
         }
     }
 
-    /* if (item.type === "quaterNote")
-         if(item.position > 3) {
-             return (<img src={BarItem.quaterNoteDown} className='note'></img>)
-         } else {
-             return (<img src={BarItem.quaterNoteDown} className='note'></img>)
-     } */
+    test = () => {
+        var newBar = this.state.bar;
 
 
+
+        this.setState({bar: newBar})
+           
+    
+    }
+        
+    isMine(pos, beat) {
+        return beat.items.some(item => pos == item.position)
+    }
+
+    getContent(pos, items) {
+        var ret = <span className='note'>o</span>;
+        items.forEach(item => {
+            if (item.position == pos) {
+                switch (item.type) {
+                    case 'quaterNote':
+                        ret =  BarItem.quaterNoteDown; break;
+                    case 'halfNote':
+                        ret =  BarItem.halfNoteDown; break;
+                    default:
+                        ret =  BarItem.halfNoteDown;
+                }
+            }
+        });
+
+        return ret;
+    }
 
     render() {
-        console.log(this.props.data.beats);
         return (
-            <div id="bar" className="bar">
+            <div id="bar" className="bar" onClick={this.test}>
 
                 {
 
-                    this.props.data.beats.map(beat => (
+                    this.state.bar.beats.map(beat => (
 
                         <div className='beat-parent'>
-                            <div className="beat-line">{this.isMine(8, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-noline">{this.isMine(7, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-line">{this.isMine(6, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-noline">{this.isMine(5, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-line">{this.isMine(4, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-noline">{this.isMine(3, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-line">{this.isMine(2, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-noline">{this.isMine(1, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
-                            <div className="beat-line">{this.isMine(0, beat) ? this.getContent(beat.item) : <span className='note'></span>}</div>
 
+
+                            <div className="beat-line">{this.isMine(8, beat) ? this.getContent(8, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-noline">{this.isMine(7, beat) ? this.getContent(7, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-line">{this.isMine(6, beat) ? this.getContent(6, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-noline">{this.isMine(5, beat) ? this.getContent(5, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-line">{this.isMine(4, beat) ? this.getContent(4, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-noline">{this.isMine(3, beat) ? this.getContent(3, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-line">{this.isMine(2, beat) ? this.getContent(2, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-noline">{this.isMine(1, beat) ? this.getContent(1, beat.items) : <span className='note'></span>}</div>
+                            <div className="beat-line">{this.isMine(0, beat) ? this.getContent(0, beat.items) : <span className='note'></span>}</div>
+
+
+                            
+                            <div className="beat-noline">{this.isMine(-1, beat) ? this.getContent(-1, beat.items) : <span className='note'></span>}</div>
+                            <div className={this.isMine(-2, beat) ? "beat-singleline beat-noline" : "beat-noline"}>{this.isMine(-2, beat) ? this.getContent(-2, beat.items) : <span className='note'></span>}</div>
                         </div>
                     ))
 

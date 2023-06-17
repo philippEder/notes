@@ -1,0 +1,28 @@
+{
+    "beats": [
+        {
+            "item": {
+                "position": 2,
+                "type": "quaterNote"
+            }
+        },
+        {
+            "item": {
+                "position": 4,
+                "type": "quaterNote"
+            }
+        },
+        {
+            "item": {
+                "position": 5,
+                "type": "quaterNote"
+            }
+        },
+        {
+            "item": {
+                "position": 7,
+                "type": "quaterNote"
+            }
+        }
+    ]
+}

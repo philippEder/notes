@@ -1,60 +1,79 @@
 {
     "title": "F-A-C-E",
-    "clef": "viola",
+    "clef": "violin",
     "bars": [
         {
             "beats": [
                 {
-                    "item": {
-                        "position": 1,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": -1,
+                            "type": "quaterNote"
+                        },
+                        {
+                            "position": 5,
+                            "type": "quaterNote"
+                        }
+                    ]
                 },
                 {
-                    "item": {
-                        "position": 3,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": 3,
+                            "type": "quaterNote"
+                        }
+                    ]
                 },
                 {
-                    "item": {
-                        "position": 5,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": 5,
+                            "type": "halphNote"
+                        }
+                    ]
                 },
                 {
-                    "item": {
-                        "position": 7,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": 7,
+                            "type": "quaterNote"
+                        }
+                    ]
                 }
             ]
         },
         {
             "beats": [
                 {
-                    "item": {
-                        "position": 7,
+                    "items": [
+                        {
+                            "position": -1,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {"items": [
+                    {
+                        "position": -2,
                         "type": "quaterNote"
                     }
+                ]
                 },
                 {
-                    "item": {
-                        "position": 5,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": 3,
+                            "type": "quaterNote"
+                        }
+                    ]
                 },
                 {
-                    "item": {
-                        "position": 3,
-                        "type": "quaterNote"
-                    }
-                },
-                {
-                    "item": {
-                        "position": 1,
-                        "type": "quaterNote"
-                    }
+                    "items": [
+                        {
+                            "position": 5,
+                            "type": "quaterNote"
+                        }
+                    ]
                 }
             ]
         }

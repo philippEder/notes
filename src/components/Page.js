@@ -1,7 +1,5 @@
 import Bar from './Bar';
 import './Page.css';
-import Notes from '../common/Notes'
-import clef from '../icons/violin-clef.png'
 import faceTestdata from '../testdata/example1.json'
 import React from 'react';
 
