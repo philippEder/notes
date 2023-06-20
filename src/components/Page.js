@@ -15,11 +15,15 @@ class Page extends React.Component {
 
         <h1>{faceTestdata.title}</h1>
 
-        {
-        faceTestdata.bars.map(bar =>
-            <Bar data={bar}></Bar>
-          )
-         }
+        <div>
+          {
+            faceTestdata.bars.map(bar =>
+              <Bar data={bar}></Bar>
+            )
+          }
+        </div>
+
+
       </div>
 
 
