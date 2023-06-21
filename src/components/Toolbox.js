@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 const Toolbox = ({ onSelectItemHandler }) => {
 
-  const initiallySelected = "none";
+  const initiallySelected = "quaterNote";
   const [selected, setSelected] = useState("none");
 
   useEffect(() => {
