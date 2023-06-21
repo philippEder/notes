@@ -1,5 +1,5 @@
 {
-    "title": "F-A-C-E",
+    "title": "Tesdata",
     "clef": "violin",
     "bars": [
         {
@@ -28,7 +28,7 @@
                     "items": [
                         {
                             "position": 5,
-                            "type": "halphNote"
+                            "type": "halfNote"
                         }
                     ]
                 },
