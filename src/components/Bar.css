@@ -6,6 +6,17 @@
 .bar {
     margin-bottom: 35px;
     line-height: 7px;
+    display: inline-block;
+}
+
+.bar:after {
+    content: "";
+    position: absolute;
+    left: auto;
+    margin-top: 5px;
+    height: 80px;
+    width: 1px;
+    border-left: 1px solid black;
 }
 
 .note {

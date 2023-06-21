@@ -76,6 +76,130 @@
                     ]
                 }
             ]
+        },
+
+
+        {
+            "beats": [
+                {
+                    "items": [
+                        {
+                            "position": -1,
+                            "type": "quaterNote"
+                        },
+                        {
+                            "position": 5,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 3,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 5,
+                            "type": "halfNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 7,
+                            "type": "quaterNote"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "beats": [
+                {
+                    "items": [
+                        {
+                            "position": -1,
+                            "type": "quaterNote"
+                        },
+                        {
+                            "position": 5,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 3,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": -5,
+                            "type": "halfNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 7,
+                            "type": "quaterNote"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        {
+            "beats": [
+                {
+                    "items": [
+                        {
+                            "position": -1,
+                            "type": "quaterNote"
+                        },
+                        {
+                            "position": 5,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 3,
+                            "type": "quaterNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 5,
+                            "type": "halfNote"
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "position": 7,
+                            "type": "quaterNote"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
