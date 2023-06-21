@@ -4,9 +4,18 @@ import React, { useState } from 'react';
 
 function Line(props) {
 
-    const [type, setType] = useState(props.line.type)
+    const [type, setType] = useState(props.line.type);
 
-    const addfromToolbox = () => {
+    const [isHover, setIsHover] = useState(false);
+    const [previousType, setPreviousType] = useState(props.line.type);
+
+
+    const onClick = () => {
+        setIsHover(false);
+        setTypeFromTooblox();
+    }
+
+    const setTypeFromTooblox = () => {
         var selected = props.selectedToolboxItem;
         setType(selected);
     }
@@ -45,9 +54,29 @@ function Line(props) {
         return styles;
     }
 
+    const hover = () => {
+        setIsHover(true);
+        setPreviousType(type);
+        setTypeFromTooblox();
+    }
+
+    const fade = () => {
+        if (isHover) {
+            setType(previousType);
+        }
+        setIsHover(false);
+    }
+
 
     return (
-        <div onClick={addfromToolbox} className={getStyle()}>{getContent()}</div>
+        <div onClick={onClick} 
+             onMouseEnter={hover}
+             onMouseLeave={fade} 
+             className={getStyle()}>
+                
+                {getContent()}
+                
+        </div>
     )
 
 
