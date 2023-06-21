@@ -1,23 +1,15 @@
 import React from "react";
-import { useDrag } from 'react-dnd';
 import QuaterNoteUpIcon from '../icons/QuaterNoteUpIcon.js';
 
 
-function QuaterNoteUpToolboxIcon() {
+const QuaterNoteUpToolboxIcon = ({isSelected, onPress}) => {
 
-  const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
-    type: 'toolboxItem',
-    collect: (monitor) => ({
-      type: "quaterNote",
-      isDragging: monitor.isDragging()
-    })
-  }))
+  const type = "quaterNote"
 
   return (
-    <span
-      ref={drag}>
+    <div className={isSelected ? 'selected' : null} onClick={() => onPress(type)}>
       <QuaterNoteUpIcon></QuaterNoteUpIcon>
-    </span>
+    </div>
 
   );
 }

@@ -36,7 +36,7 @@
                     "items": [
                         {
                             "position": 7,
-                            "type": "quaterNote"
+                            "type": ""
                         }
                     ]
                 }
@@ -84,11 +84,25 @@
                 {
                     "items": [
                         {
-                            "position": -1,
-                            "type": "quaterNote"
-                        },
-                        {
                             "position": 5,
+                            "type": "halfNote"
+                        }
+                    ]
+                },
+
+                {
+                    "items": [
+                        {
+                            "position": 7,
+                            "type": ""
+                        }
+                    ]
+                },
+
+                {
+                    "items": [
+                        {
+                            "position": -1,
                             "type": "quaterNote"
                         }
                     ]
@@ -104,16 +118,8 @@
                 {
                     "items": [
                         {
-                            "position": 5,
-                            "type": "halfNote"
-                        }
-                    ]
-                },
-                {
-                    "items": [
-                        {
                             "position": 7,
-                            "type": "quaterNote"
+                            "type": ""
                         }
                     ]
                 }
@@ -154,7 +160,7 @@
                     "items": [
                         {
                             "position": 7,
-                            "type": "quaterNote"
+                            "type": ""
                         }
                     ]
                 }
@@ -195,7 +201,7 @@
                     "items": [
                         {
                             "position": 7,
-                            "type": "quaterNote"
+                            "type": ""
                         }
                     ]
                 }

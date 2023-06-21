@@ -3,33 +3,28 @@ import './Page.css';
 import faceTestdata from '../testdata/example1.json'
 import React from 'react';
 
-class Page extends React.Component {
+function Page(props) {
 
+  return (
 
+    <div className="page">
 
+      <h1>{faceTestdata.title}</h1>
 
-  render() {
-    return (
-
-      <div className="page">
-
-        <h1>{faceTestdata.title}</h1>
-
-        <div>
-          {
-            faceTestdata.bars.map(bar =>
-              <Bar data={bar}></Bar>
-            )
-          }
-        </div>
-
-
+      <div>
+        {
+          faceTestdata.bars.map(bar =>
+            <Bar selectedToolboxItem={props.selectedToolboxItem} data={bar}></Bar>
+          )
+        }
       </div>
 
 
+    </div>
 
-    )
-  }
+
+
+  )
 
 }
 

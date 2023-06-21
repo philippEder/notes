@@ -1,22 +1,20 @@
 import { BarItem } from '../common/BarItem';
-import './Beat.css';
-import React from 'react';
-import { useDrop } from 'react-dnd';
+import './Line.css';
+import React, { useState } from 'react';
 
 function Line(props) {
 
-    const [collectedProps, drop] = useDrop(() => ({
-        accept: "toobloxItem",
-        drop(item, monitor) {
-            console.log("drop");
-        }
-      }))
+    const [type, setType] = useState(props.line.type)
 
+    const addfromToolbox = () => {
+        var selected = props.selectedToolboxItem;
+        setType(selected);
+    }
 
     const getContent = () => {
         var ret;
 
-        switch (props.line.type) {
+        switch (type) {
             case 'quaterNote':
                 ret = BarItem.quaterNoteDown; break;
             case 'halfNote':
@@ -49,7 +47,7 @@ function Line(props) {
 
 
     return (
-        <div ref={drop} className={getStyle()}>{getContent()}</div>
+        <div onClick={addfromToolbox} className={getStyle()}>{getContent()}</div>
     )
 
 

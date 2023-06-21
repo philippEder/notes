@@ -1,14 +1,28 @@
 import { ToolboxItem } from '../common/TooboxItems';
 import QuaterNoteUpToolboxIcon from '../icons/QuaterNoteUpToolboxIcon';
-import HalfNoteUpIcon from '../icons/HalfNoteUpIcon.js';
+import HalfNoteUpToolboxIcon from '../icons/HalfNoteUpToolboxIcon.js';
 import './Toolbox.css';
+import { useState } from 'react';
 
-function Toolbox() {
+const Toolbox = ({onSelectItemHandler}) => {
+
+  const [selected, setSelected] = useState("quaterNote");
+  
+  const onSelect = (type) => {
+    var newSelection;
+    if (selected === type)
+      newSelection = null;
+    else
+      newSelection = type;
+
+    setSelected(newSelection);
+    onSelectItemHandler(newSelection);
+  }
 
   return (
     <div id="toolbox" className='toolbox'>
-        <QuaterNoteUpToolboxIcon></QuaterNoteUpToolboxIcon>
-        <HalfNoteUpIcon></HalfNoteUpIcon>
+        <QuaterNoteUpToolboxIcon isSelected={"quaterNote" === selected} onPress={type => onSelect(type)}></QuaterNoteUpToolboxIcon>
+        <HalfNoteUpToolboxIcon  isSelected={"halfNote" === selected} onPress={type => onSelect(type)}></HalfNoteUpToolboxIcon>
     </div>
   );
 

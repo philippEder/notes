@@ -1,0 +1,45 @@
+
+.note {
+    position: absolute;
+}
+
+
+.beat-line {
+    font-size: 30px;
+    line-height: 4px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    height: 10px;
+}
+
+.beat-noline {
+    font-size: 30px;
+    line-height: 4px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    height: 10px;
+}
+
+.beat-line:after {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: black;
+  content: "";
+  width: 100%;
+  display: block;
+}
+
+.beat-singleline:after {
+    position: absolute;
+    left: 43px;
+    top: 50%;
+    height: 1px;
+    background: black;
+    content: "";
+    width: 27%;
+    display: block;
+}

@@ -1,26 +1,19 @@
-import { BarItem } from '../common/BarItem';
 import './Bar.css';
-
 import Beat from './Beat.js';
-import React from 'react';
 
-class Bar extends React.Component {
+function Bar(props) {
 
-    render() {
-        return (
-            <div id="bar" className="bar">
+    return (
+        <div id="bar" className="bar">
 
-                {
+            {
+                props.data.beats.map(beat =>
+                    <Beat selectedToolboxItem={props.selectedToolboxItem} items={beat.items}></Beat>
+                )
+            }
 
-                    this.props.data.beats.map(beat => 
-                        <Beat items={beat.items}></Beat>
-                    )
-
-                }
-
-            </div>
-        )
-    }
+        </div>
+    )
 
 }
 

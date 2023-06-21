@@ -1,65 +1,47 @@
-import { BarItem } from '../common/BarItem';
 import './Beat.css';
 import Line from './Line';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Beat extends React.Component {
+const Beat = ({selectedToolboxItem, items}) => {
 
-    constructor(props) {
-        super(props);
-        var positions = props.items.map(item => item.position);
+
+    const [lines, setLines] = useState([]);
+
+    useEffect(() => {
+        var positions = items.map(item => item.position);
         var min = Math.min(...positions) < 0 ? Math.min(...positions) : 0;
-        var max =  Math.max(...positions) > 8 ? Math.max(...positions) : 8;
-        var lines = [];
+        var max = Math.max(...positions) > 8 ? Math.max(...positions) : 8;
+        var linesarr = [];
 
         for (var i = min; i <= max; i++) {
-            lines.push({
+            linesarr.push({
                 position: i,
-                type: this.findItemByPosition(props.items, i)?.[0]?.type
+                type: findItemByPosition(items, i)?.[0]?.type
             });
         }
 
-        this.state = {
-            lines: lines.reverse(),
-        }
-    }
+        setLines(linesarr.reverse());
+    }, [items]);
 
-    findItemByPosition = (items, position) => {
+    const findItemByPosition = (items, position) => {
         return items.filter(item => item.position == position)
     }
 
-    findLineByPosition = (lines, position) => {
-        return lines.filter(line => line.position == position)
-    }
-
-    addItem = (position, type) => {
-        var lines = this.state.lines
+    const addItem = (position, type) => {
         var lineIndex = lines.findIndex(line => line.position == position);
         lines[lineIndex].type = type;
 
-        this.setState({
-            lines: lines
-        })
+        setLines(lines);
 
     }
 
-    render() {
-        return (
-
-        
-
-
-            <div className='beat-parent'>
-                {
-                    this.state.lines.map(line => <Line line={line} addItemHandler={this.addItem}></Line>)
-                } 
-
-
-            </div>
-
-        )
-
-    }
+    return (
+        <div className='beat-parent'>
+            {
+                lines.map(line => <Line line={line} selectedToolboxItem={selectedToolboxItem} addItemHandler={addItem}></Line>)
+            }
+        </div>
+    )
 
 }
 
