@@ -13,11 +13,10 @@
     content: "";
     position: absolute;
     left: auto;
-    bottom: 106px;
-    height: 81px;
+    margin-top: 5px;
+    height: 80px;
     width: 1px;
     border-left: 1px solid black;
-    display: inline-block;
 }
 
 .note {
