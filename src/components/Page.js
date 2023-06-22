@@ -2,6 +2,7 @@ import Bar from './Bar';
 import './Page.css';
 import faceTestdata from '../testdata/example1.json'
 import React from 'react';
+import uuid from 'react-uuid';
 
 function Page(props) {
 
@@ -14,7 +15,7 @@ function Page(props) {
       <div>
         {
           faceTestdata.bars.map(bar =>
-            <Bar selectedToolboxItem={props.selectedToolboxItem} data={bar}></Bar>
+            <Bar key={uuid()} selectedToolboxItem={props.selectedToolboxItem} data={bar}></Bar>
           )
         }
       </div>

@@ -1,5 +1,6 @@
 import './Beat.css';
 import Line from './Line';
+import uuid from 'react-uuid';
 import React, { useState, useEffect } from 'react';
 
 const Beat = ({selectedToolboxItem, items}) => {
@@ -38,7 +39,7 @@ const Beat = ({selectedToolboxItem, items}) => {
     return (
         <div className='beat-parent'>
             {
-                lines.map(line => <Line line={line} selectedToolboxItem={selectedToolboxItem} addItemHandler={addItem}></Line>)
+                lines.map(line => <Line key={uuid()} line={line} selectedToolboxItem={selectedToolboxItem} addItemHandler={addItem}></Line>)
             }
         </div>
     )

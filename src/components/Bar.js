@@ -1,5 +1,6 @@
 import './Bar.css';
 import Beat from './Beat.js';
+import uuid from 'react-uuid';
 
 function Bar(props) {
 
@@ -8,7 +9,7 @@ function Bar(props) {
 
             {
                 props.data.beats.map(beat =>
-                    <Beat selectedToolboxItem={props.selectedToolboxItem} items={beat.items}></Beat>
+                    <Beat key={uuid()} selectedToolboxItem={props.selectedToolboxItem} items={beat.items}></Beat>
                 )
             }
 

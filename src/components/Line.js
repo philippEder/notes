@@ -6,12 +6,12 @@ function Line(props) {
 
     const [type, setType] = useState(props.line.type);
 
-    const [isHover, setIsHover] = useState(false);
-    const [previousType, setPreviousType] = useState(props.line.type);
+    var isHover = true;
+    var previousType = props.line.type;
 
 
     const onClick = () => {
-        setIsHover(false);
+        isHover = false;
         setTypeFromTooblox();
     }
 
@@ -55,8 +55,8 @@ function Line(props) {
     }
 
     const hover = () => {
-        setIsHover(true);
-        setPreviousType(type);
+        isHover = true;
+        previousType = type;
         setTypeFromTooblox();
     }
 
@@ -64,7 +64,7 @@ function Line(props) {
         if (isHover) {
             setType(previousType);
         }
-        setIsHover(false);
+        isHover = false;
     }
 
 
