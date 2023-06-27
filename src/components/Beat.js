@@ -1,9 +1,9 @@
 import './Beat.css';
 import Line from './Line';
 import uuid from 'react-uuid';
-import React, { useState, useEffect } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 
-const Beat = ({selectedToolboxItem, items}) => {
+const Beat = ({addNoteCallback, items}) => {
 
 
     const [lines, setLines] = useState([]);
@@ -28,22 +28,15 @@ const Beat = ({selectedToolboxItem, items}) => {
         return items.filter(item => item.position == position)
     }
 
-    const addItem = (position, type) => {
-        var lineIndex = lines.findIndex(line => line.position == position);
-        lines[lineIndex].type = type;
-
-        setLines(lines);
-
-    }
 
     return (
         <div className='beat-parent'>
             {
-                lines.map(line => <Line key={uuid()} line={line} selectedToolboxItem={selectedToolboxItem} addItemHandler={addItem}></Line>)
+                lines.map(line => <Line key={uuid()} position={line.position} type={line.type} addNoteCallback={addNoteCallback}></Line>)
             }
         </div>
     )
 
 }
 
-export default Beat;
+export default memo(Beat);

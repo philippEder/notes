@@ -9,14 +9,14 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 
 function App() {
 
-  const [selectedToolboxItem, setSelectedToolboxItem] = useState([])
+  var selectedToolboxItem = "quaterNote";
 
   useEffect(() => {
     document.title = 'noz';
-  });
+  }, []);
 
   const selectToolboxItem = (item) => {
-    setSelectedToolboxItem(item);
+    selectedToolboxItem = item;
   }
 
 

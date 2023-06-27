@@ -1,23 +1,12 @@
 import { BarItem } from '../common/BarItem';
 import './Line.css';
-import React, { useState } from 'react';
+import { useState, memo } from 'react';
 
-function Line(props) {
-
-    const [type, setType] = useState(props.line.type);
-
-    var isHover = true;
-    var previousType = props.line.type;
-
+function Line({type, position, addNoteCallback}) {
 
     const onClick = () => {
-        isHover = false;
-        setTypeFromTooblox();
-    }
+        addNoteCallback(1, position);
 
-    const setTypeFromTooblox = () => {
-        var selected = props.selectedToolboxItem;
-        setType(selected);
     }
 
     const getContent = () => {
@@ -38,12 +27,11 @@ function Line(props) {
     const getStyle = () => {
 
         var styles = "";
-        var pos = props.line.position;
 
-        if (pos % 2 == 0) {
+        if (position % 2 == 0) {
             styles += "beat-line ";
 
-            if (pos < 0 || pos > 8) {
+            if (position < 0 || position > 8) {
                 styles += "beat-singleline "
             }
 
@@ -54,24 +42,9 @@ function Line(props) {
         return styles;
     }
 
-    const hover = () => {
-        isHover = true;
-        previousType = type;
-        setTypeFromTooblox();
-    }
-
-    const fade = () => {
-        if (isHover) {
-            setType(previousType);
-        }
-        isHover = false;
-    }
-
 
     return (
-        <div onClick={onClick} 
-             onMouseEnter={hover}
-             onMouseLeave={fade} 
+        <div onClick={onClick}  
              className={getStyle()}>
                 
                 {getContent()}
@@ -83,4 +56,4 @@ function Line(props) {
 
 }
 
-export default Line;
+export default memo(Line);

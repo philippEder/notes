@@ -1,10 +1,29 @@
 import Bar from './Bar';
 import './Page.css';
 import faceTestdata from '../testdata/example1.json'
-import React from 'react';
+import React, {memo, useState } from 'react';
 import uuid from 'react-uuid';
 
 function Page(props) {
+
+  const [page, setPage] = useState(faceTestdata);
+
+  function addNote(barId, position) {
+
+    var newPage = JSON.parse(JSON.stringify(page));
+
+    newPage.bars[1].beats[1].items.push({
+      "position": position,
+      "type": props.selectedToolboxItem
+    });
+
+
+
+    setPage(newPage);
+  }
+
+
+
 
   return (
 
@@ -14,8 +33,8 @@ function Page(props) {
 
       <div>
         {
-          faceTestdata.bars.map(bar =>
-            <Bar key={uuid()} selectedToolboxItem={props.selectedToolboxItem} data={bar}></Bar>
+          page.bars.map(bar =>
+            <Bar key={uuid()} addNoteCallback={addNote} beats={bar.beats}></Bar>
           )
         }
       </div>
@@ -29,4 +48,4 @@ function Page(props) {
 
 }
 
-export default Page;
+export default memo(Page);
