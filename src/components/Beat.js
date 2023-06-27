@@ -3,7 +3,7 @@ import Line from './Line';
 import uuid from 'react-uuid';
 import React, { memo, useState, useEffect } from 'react';
 
-const Beat = ({addNoteCallback, items}) => {
+const Beat = ({idx, addNoteCallback, items}) => {
 
 
     const [lines, setLines] = useState([]);
@@ -25,14 +25,16 @@ const Beat = ({addNoteCallback, items}) => {
     }, [items]);
 
     const findItemByPosition = (items, position) => {
-        return items.filter(item => item.position == position)
+        return items.filter(item => item.position === position)
     }
+
+    const addNote = (position) => addNoteCallback(idx, position);
 
 
     return (
         <div className='beat-parent'>
             {
-                lines.map(line => <Line key={uuid()} position={line.position} type={line.type} addNoteCallback={addNoteCallback}></Line>)
+                lines.map(line => <Line key={uuid()} position={line.position} type={line.type} addNoteCallback={addNote}></Line>)
             }
         </div>
     )

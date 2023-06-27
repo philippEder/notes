@@ -4,15 +4,17 @@ import { useState, memo } from 'react';
 
 function Line({type, position, addNoteCallback}) {
 
-    const onClick = () => {
-        addNoteCallback(1, position);
+    const [currentType, setCurrentType] = useState(type);
 
+    const onClick = () => {
+        addNoteCallback(position);
+        setCurrentType("halfNote")
     }
 
     const getContent = () => {
         var ret;
 
-        switch (type) {
+        switch (currentType) {
             case 'quaterNote':
                 ret = BarItem.quaterNoteDown; break;
             case 'halfNote':
@@ -28,7 +30,7 @@ function Line({type, position, addNoteCallback}) {
 
         var styles = "";
 
-        if (position % 2 == 0) {
+        if (position % 2 === 0) {
             styles += "beat-line ";
 
             if (position < 0 || position > 8) {

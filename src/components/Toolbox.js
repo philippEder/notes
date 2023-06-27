@@ -1,4 +1,3 @@
-import { ToolboxItem } from '../common/TooboxItems';
 import QuaterNoteUpToolboxIcon from '../icons/QuaterNoteUpToolboxIcon';
 import HalfNoteUpToolboxIcon from '../icons/HalfNoteUpToolboxIcon.js';
 import './Toolbox.css';
